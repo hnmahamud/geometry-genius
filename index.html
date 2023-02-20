@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9070a33600.js" crossorigin="anonymous"></script>
+    <!-- daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind Js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Color and Font Extend -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        headerBgColor: '#1090D81A',
+                        header1Color: 'rgba(17, 17, 17, 0.8)',
+                        header2Color: 'rgba(17, 17, 17, 0.6)',
+                        btnColor: '#1090D8',
+                        inputBg: '#F1F1F1',
+                        headingColor: '#414141',
+                    },
+                    fontFamily: {
+                        Inter: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="w-[95%] mx-auto font-Inter">
+    <!-- Header -->
+    <header class="mt-6 mb-12">
+        <div class="navbar bg-headerBgColor px-12">
+            <div class="navbar-start">
+                <p class="normal-case"><span class="text-2xl font-bold text-header1Color">Interactive</span> <br> <span
+                        class="text-base font-medium text-header1Color">Geometry Genius</span></p>
+            </div>
+            <div class="navbar-end">
+                <a onclick="window.location.href='blog.html'"
+                    class="btn bg-btnColor hover:bg-headerBgColor rounded-sm hover:text-black px-10 py-2">Blog</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <section class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div class="md:col-span-2">
+                    <div id="allCards" class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                        <!-- Card 1 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/triangle.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="triangleName" class="text-2xl font-bold">Triangle</h3>
+                                <div>
+                                    <p>Area(A) = 0.5 X b X h</p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>b = <span id="triangleB">4</span> cm, h = <span id="triangleH">6</span> cm
+                                        </p>
+                                        <button id="triangleEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="triangleHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="triangleInputB" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <input id="triangleInputH" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="h">
+                                        <p>cm</p>
+                                        <button id="triangleUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="triangleCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/rectangle.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="rectangleName" class="text-2xl font-bold">Rectangle</h3>
+                                <div>
+                                    <p>Area(A) = w X l</p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>w = <span id="rectangleW">6</span> cm, l = <span id="rectangleL">8</span> cm
+                                        </p>
+                                        <button id="rectangleEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="rectangleHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="rectangleInputW" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="w">
+                                        <p>cm</p>
+                                        <input id="rectangleInputL" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="l">
+                                        <p>cm</p>
+                                        <button id="rectangleUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="rectangleCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/parallelogram.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="parallelogramName" class="text-2xl font-bold">Parallelogram</h3>
+                                <div>
+                                    <p>Area(A) = b X h</p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>b = <span id="parallelogramB">10</span> cm, h = <span
+                                                id="parallelogramH">12</span> cm</p>
+                                        <button id="parallelogramEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="parallelogramHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="parallelogramInputB" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <input id="parallelogramInputH" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="h">
+                                        <p>cm</p>
+                                        <button id="parallelogramUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="parallelogramCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/rhombus.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="rhombusName" class="text-2xl font-bold">Rhombus</h3>
+                                <div>
+                                    <p>Area(A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>d<sub>1</sub> = <span id="rhombusD1">16</span> cm, d<sub>2</sub> = <span
+                                                id="rhombusD2">8</span> cm</p>
+                                        <button id="rhombusEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="rhombusHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="rhombusInputD1" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="d1">
+                                        <p>cm</p>
+                                        <input id="rhombusInputD2" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="d2">
+                                        <p>cm</p>
+                                        <button id="rhombusUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="rhombusCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/pentagon.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="pentagonName" class="text-2xl font-bold">Pentagon</h3>
+                                <div>
+                                    <p>Area(A) = 0.5 X p X b</p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>p = <span id="pentagonP">6</span> cm, b = <span id="pentagonB">10</span> cm
+                                        </p>
+                                        <button id="pentagonEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="pentagonHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="pentagonInputP" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="p">
+                                        <p>cm</p>
+                                        <input id="pentagonInputB" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <button id="pentagonUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="pentagonCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div
+                            class="items flex flex-col align-middle justify-center text-center border-2 rounded-sm px-10 py-12 space-y-8">
+                            <img class="h-40" src="images/ellipse.png" alt="">
+                            <div class="flex flex-col space-y-3">
+                                <h3 id="ellipseName" class="text-2xl font-bold">Ellipse</h3>
+                                <div>
+                                    <p>Area(A) = &pi;ab</p>
+                                    <div class="flex align-middle justify-center text-center space-x-4">
+                                        <p>a = <span id="ellipseA">10</span> cm, b = <span id="ellipseB">4</span> cm
+                                        </p>
+                                        <button id="ellipseEditBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-pen-to-square font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                                <div id="ellipseHide" class="hidden">
+                                    <div class="flex align-middle justify-center text-center space-x-1">
+                                        <input id="ellipseInputA" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="a">
+                                        <p>cm</p>
+                                        <input id="ellipseInputB" class="bg-inputBg w-[30%] pl-2" type="text"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <button id="ellipseUpdateBtn" class="btn btn-ghost btn-xs"><i
+                                                class="fa-regular fa-square-check font-black text-base"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="ellipseCalcBtn"
+                                class="btn bg-btnColor hover:bg-white rounded-sm hover:text-black">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Area Calculation Card -->
+                <div class="border-2 rounded-sm">
+                    <h3 class="text-2xl text-center font-bold underline underline-offset-8 mt-7 mb-2">Area Calculation
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="table table-compact w-full">
+                            <tbody id="table-container">
+                                <!-- <tr>
+                                    <th>1.</th>
+                                    <td>Triangle</td>
+                                    <td>12cm<sup>2</sup></td>
+                                    <td><button class="btn btn-xs">Covert to m<sup>2</sup></button></td>
+                                    <td><button class="btn btn-ghost btn-xs"><i
+                                                class="fa-solid fa-trash text-base"></i></button></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- My JS Files -->
+    <script src="js/utilities.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

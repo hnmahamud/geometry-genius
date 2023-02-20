@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9070a33600.js" crossorigin="anonymous"></script>
+    <!-- daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind Js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Color and Font Extend -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        headerBgColor: '#1090D81A',
+                        header1Color: 'rgba(17, 17, 17, 0.8)',
+                        header2Color: 'rgba(17, 17, 17, 0.6)',
+                        btnColor: '#1090D8',
+                        inputBg: '#F1F1F1',
+                        headingColor: '#414141',
+                    },
+                    fontFamily: {
+                        Inter: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="w-[95%] mx-auto font-Inter">
+    <!-- Header -->
+    <header class="mt-6 mb-12">
+        <div class="navbar bg-headerBgColor px-12">
+            <div class="navbar-start">
+                <p class="normal-case"><span class="text-2xl font-bold text-header1Color">Interactive</span> <br> <span
+                        class="text-base font-medium text-header1Color">Geometry Genius</span></p>
+            </div>
+            <div class="navbar-end">
+                <a onclick="window.location.href='index.html'"
+                    class="btn bg-btnColor hover:bg-headerBgColor rounded-sm hover:text-black px-10 py-2">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="md:w-[70%] md:mx-auto">
+        <section class="flex flex-col space-y-4 mb-12">
+            <h1 class="text-3xl font-bold text-header1Color text-center">Blogs</h1>
+            <!-- Card 1 -->
+            <div class="bg-inputBg card card-side bg-base-100 border-2 rounded-sm">
+                <div class="col-span-2 card-body">
+                    <h2 class="card-title">What is DOM and what is the purpose of DOM?</h2>
+                    <p>DOM means Document Object Model. It is an application programming interface for HTML. It render web page to tree structure, where objects represent part of the document.</p>
+                    <p><strong>Purpose of DOM:</strong> DOM provide us access to manipulate the HTML page dynamically. It also allow us to add, remove, modify and change styles and classes in a web page. So we can say that, DOM is very powerful and flexible tool to create interactive web pages.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-inputBg card card-side bg-base-100 border-2 rounded-sm">
+                <div class="col-span-2 card-body">
+                    <h2 class="card-title">How will you select HTML elements using DOM? Name the DOM methods.</h2>
+                    <p>There are many ways in to select elements in a DOM using selectors. They are:</p>
+                    <p>1. getElementById()</p>
+                    <p>2. getElementsByClassName()</p>
+                    <p>3. getElementsByTagName()</p>
+                    <p>4. querySelector()</p>
+                    <p>5. querySelectorAll()</p>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="bg-inputBg card card-side bg-base-100 border-2 rounded-sm">
+                <div class="col-span-2 card-body">
+                    <h2 class="card-title">What is event bubble?</h2>
+                    <p>Event bubbling is a way of event propagation in the Document Object Model. When we click the specific element, event is triggered on that element. Then the event is bubble up and propagate to its all parents element and again event is trigger on all the parents element up to the root. By using stopPropagation() method we will stop this process.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-inputBg card card-side bg-base-100 border-2 rounded-sm">
+                <div class="col-span-2 card-body">
+                    <h2 class="card-title">What is a callback function and why will you use it?</h2>
+                    <p>A callback function is a function which is executed after another function has finished execution. And it also passed as an argument to another function. It is also Known as anonymous function.</p>
+                    <p><strong>Reasons to use callback functions:</strong> To respond many types of actions we can use a callback function to handle event. Click button and submit form is the example.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
